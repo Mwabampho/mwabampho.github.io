@@ -1,0 +1,177 @@
+{
+  "package": "media.shouldbe.petsos",
+  "platform": "android",
+  "channel": "stable",
+  "device": "StepPhone test hosts (Android 8.0+ phones running Pets OS as the home app)",
+  "version": "1.3.0",
+  "versionCode": 15,
+  "minSdk": 26,
+  "restartRequired": true,
+  "url": "https://shouldbe.media/downloads/android/PetsOS-Mobile-1.3.0-Android.apk",
+  "size": 4729502,
+  "sha256": "919e3526d0f082771d2e0b92d70c60aa1136859489e90f3d5ceeb40bf8cd7e48",
+  "notes": "• StepOS app suite: 31 dedicated apps, from Shutter to QuickCalc\n• New apps: Atlas, Nudge, Screenroom, Voice Pin, PocketPay, Beacon, Dropzone, Scanwise, Lingua, Assist, SafeLine, Step Update, Capture and Torch\n• Upgrades: video in Shutter, albums and edits in Moments, checklists in Pocket Notes, scientific QuickCalc, vCards in Kinbook\n• New light look and StepOS icons, an invisible home bar, Settings › Apps",
+  "os": {
+    "build": 15,
+    "commit": "589bf91f88d6148f8373b19e3bf888b57094b1a6"
+  },
+  "apps": {
+    "pets:activities": {
+      "name": "Activities",
+      "version": "1.3.0"
+    },
+    "pets:assist": {
+      "name": "Assist",
+      "version": "1.3.0"
+    },
+    "pets:atlas": {
+      "name": "Atlas",
+      "version": "1.3.0"
+    },
+    "pets:beacon": {
+      "name": "Beacon",
+      "version": "1.3.0"
+    },
+    "pets:calculator": {
+      "name": "Calculator",
+      "version": "1.3.0"
+    },
+    "pets:calendar": {
+      "name": "Calendar",
+      "version": "1.3.0"
+    },
+    "pets:camera": {
+      "name": "Camera",
+      "version": "1.3.0"
+    },
+    "pets:capsule": {
+      "name": "Capsule",
+      "version": "1.3.0"
+    },
+    "pets:capture": {
+      "name": "Capture",
+      "version": "1.3.0"
+    },
+    "pets:clarice": {
+      "name": "Clarice",
+      "version": "1.3.0"
+    },
+    "pets:clock": {
+      "name": "Clock",
+      "version": "1.3.0"
+    },
+    "pets:contacts": {
+      "name": "Contacts",
+      "version": "1.3.0"
+    },
+    "pets:dropzone": {
+      "name": "Dropzone",
+      "version": "1.3.0"
+    },
+    "pets:files": {
+      "name": "Burrow",
+      "version": "1.3.0"
+    },
+    "pets:lenda": {
+      "name": "Lenda",
+      "version": "2.1.0",
+      "source": "ShouldBe-Desktop/apps/lenda"
+    },
+    "pets:lingua": {
+      "name": "Lingua",
+      "version": "1.3.0"
+    },
+    "pets:messages": {
+      "name": "Messages",
+      "version": "1.3.0"
+    },
+    "pets:milo": {
+      "name": "Milo",
+      "version": "1.3.0"
+    },
+    "pets:moments": {
+      "name": "Moments",
+      "version": "1.3.0"
+    },
+    "pets:nudge": {
+      "name": "Nudge",
+      "version": "1.3.0"
+    },
+    "pets:ostore": {
+      "name": "O Store",
+      "version": "1.3.0"
+    },
+    "pets:pen": {
+      "name": "Pen",
+      "version": "1.3.0"
+    },
+    "pets:phone": {
+      "name": "Phone",
+      "version": "1.3.0"
+    },
+    "pets:pip": {
+      "name": "Pip",
+      "version": "1.3.0"
+    },
+    "pets:pocketpay": {
+      "name": "PocketPay",
+      "version": "1.3.0"
+    },
+    "pets:rest": {
+      "name": "Rest",
+      "version": "1.3.0"
+    },
+    "pets:safeline": {
+      "name": "SafeLine",
+      "version": "1.3.0"
+    },
+    "pets:scanwise": {
+      "name": "Scanwise",
+      "version": "1.3.0"
+    },
+    "pets:screenroom": {
+      "name": "Screenroom",
+      "version": "1.3.0"
+    },
+    "pets:settings": {
+      "name": "Settings",
+      "version": "1.3.0"
+    },
+    "pets:sonix": {
+      "name": "Sonix",
+      "version": "2.1.0",
+      "source": "ShouldBe-Desktop/apps/sonix"
+    },
+    "pets:stepmail": {
+      "name": "StepMail",
+      "version": "1.8.1",
+      "source": "ShouldBe-Desktop/apps/stepmail"
+    },
+    "pets:stepupdate": {
+      "name": "Step Update",
+      "version": "1.3.0"
+    },
+    "pets:syncro": {
+      "name": "Syncro",
+      "version": "1.3.0"
+    },
+    "pets:torch": {
+      "name": "Torch",
+      "version": "1.3.0"
+    },
+    "pets:voicepin": {
+      "name": "Voice Pin",
+      "version": "1.3.0"
+    },
+    "pets:weather": {
+      "name": "Weather",
+      "version": "1.3.0"
+    }
+  },
+  "serial": 1793661731,
+  "expires": 1825197731,
+  "signing": {
+    "manifest": "ECDSA P-256 / SHA-256 (Pets OS store key)",
+    "package": "APK signature scheme v2/v3, same key as the installed Pets OS"
+  }
+}

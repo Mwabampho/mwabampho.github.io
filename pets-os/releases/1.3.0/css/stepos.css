@@ -1,0 +1,328 @@
+/* StepOS visual system for Pets OS for Stephone (2026-11-02).
+   Calmer neutral colours, one type scale, consistent controls, and the styles for the StepOS app suite.
+   Works on old Android WebViews (Chrome 83): no inset shorthand, aspect-ratio, flex gap or :is(). */
+
+/* ---------- tokens ---------- */
+:root {
+  --text: #eef1f7; --text2: #a9b1c3; --text3: #7b8497;
+  --accent: #4f86f7; --accent2: #7b6cf6; --accent-ink: #fff;
+  --danger: #f2555d; --success: #34c38f; --warn: #f5b041;
+  --line: rgba(255,255,255,.085); --hover: rgba(255,255,255,.06);
+  --bg: #0d1016; --card: #161a22; --field: #0b0d12; --button: #222733; --toggle-off: #2b3140;
+  --glass: rgba(20,24,33,.58); --glass-strong: rgba(17,20,28,.9);
+  --radius: 16px;
+  --st-shadow: 0 1px 2px rgba(0,0,0,.25), 0 6px 18px rgba(0,0,0,.18);
+}
+:root.light {
+  --text: #10131a; --text2: #4a5163; --text3: #79808f;
+  --line: rgba(16,19,26,.09); --hover: rgba(16,19,26,.045);
+  --bg: #f3f4f7; --card: #ffffff; --field: #eceef3; --button: #e4e7ee; --toggle-off: #cfd4de;
+  --glass: rgba(248,249,251,.7); --glass-strong: rgba(248,249,251,.94);
+  --st-shadow: 0 1px 2px rgba(16,19,26,.06), 0 6px 18px rgba(16,19,26,.06);
+}
+:root.high-contrast { --text2: #d6dbe6; --text3: #b5bccb; --line: rgba(255,255,255,.28); --button: #2d3443; }
+:root.light.high-contrast { --text2: #20242e; --text3: #3b4150; --line: rgba(0,0,0,.35); }
+:root.high-contrast .card { box-shadow: 0 0 0 1px var(--line); }
+body { background: #000; }
+button:focus-visible, .row:focus-visible, [role="button"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- type scale ---------- */
+.win > header { padding-left: 18px; padding-right: 14px; }
+.win > header h1 { font-size: 28px; font-weight: 600; letter-spacing: -.45px; }
+.win > header .back { font-size: 15px; font-weight: 500; }
+.win > header .acts button { height: 34px; min-width: 34px; border-radius: 17px; font-size: 14px; color: var(--accent); background: var(--button); }
+/* (header buttons use the flex gap; old WebViews get margins below) */
+.win .body { padding-left: 16px; padding-right: 16px; }
+.label { font-size: 12px; letter-spacing: .06em; color: var(--text3); margin: 20px 4px 7px; }
+.card { border-radius: var(--radius); box-shadow: var(--st-shadow); }
+.card .row { min-height: 52px; padding: 11px 14px; }
+.card .row .sub { font-size: 13px; line-height: 1.35; }
+.card .sq { border-radius: 8px; width: 30px; height: 30px; }
+.btn { height: 46px; border-radius: 13px; font-weight: 600; letter-spacing: -.1px; }
+.btn.block + .btn.block { margin-top: 10px; }
+.btn > svg.i { width: 19px; height: 19px; }
+.field { border-radius: 12px; height: 46px; }
+.seg { border-radius: 11px; padding: 3px; }
+.seg button { height: 32px; border-radius: 8px; font-weight: 500; color: var(--text2); }
+.seg button.on { color: var(--text); }
+.set-note { color: var(--text3); font-size: 13px; line-height: 1.5; margin: 8px 4px 12px; }
+.empty-state { padding: 48px 20px; }
+.empty-state small { color: var(--text3); }
+.toggle.on { background: var(--success); }
+
+/* ---------- Home Screen ---------- */
+.app .tile { width: 60px; height: 60px; border-radius: 15px; box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 4px 10px rgba(0,0,0,.18); overflow: hidden; }
+.app .name { font-size: 11.5px; font-weight: 500; letter-spacing: .1px; text-shadow: 0 1px 2px rgba(0,0,0,.55); }
+.st-tile { background: none !important; padding: 0; }
+.st-tile svg.st-icon { width: 100%; height: 100%; display: block; }
+#dock { background: rgba(28,32,44,.32); border: 1px solid rgba(255,255,255,.12); border-radius: 28px; }
+.widget { border-radius: 20px; border: 1px solid rgba(255,255,255,.08); }
+.widget h4 { font-size: 11.5px; letter-spacing: .07em; }
+.widget-today .big { font-size: 30px; font-weight: 300; letter-spacing: -.5px; }
+.st-small { width: 40px !important; height: 40px !important; border-radius: 10px !important; flex: none; overflow: hidden; }
+.st-big { width: 72px !important; height: 72px !important; border-radius: 17px !important; flex: none; overflow: hidden; }
+.st-small svg, .st-big svg { width: 100%; height: 100%; display: block; }
+
+/* Old WebViews have no flex gap: space rows and buttons with margins there instead. */
+.no-flexgap .card .row > * + * { margin-left: 12px; }
+.no-flexgap .card .row[style*="block"] > * + * { margin-left: 0; }
+.no-flexgap .btn > svg.i, .no-flexgap .cam-btn > svg.i { margin-right: 6px; }
+.no-flexgap .win > header .acts button + button { margin-left: 6px; }
+.no-flexgap .app .name { margin-top: 7px; }
+
+/* ---------- old WebView fixes (Chrome < 88: no aspect-ratio; < 87: no inset) ---------- */
+.cam, .cam video, .cam-flash { top: 0; right: 0; bottom: 0; left: 0; }
+.cam-msg { top: 28%; right: 30px; left: 30px; bottom: auto; }
+@supports not (aspect-ratio: 1) {
+  .cc-tile { height: 74px; }
+  .cc-tile.wide, .cc-tile.tall { height: auto; }
+  .wall-tile, .mood-walls button { height: 0; padding-bottom: 160%; }
+}
+
+/* ---------- shared suite pieces ---------- */
+.st-hero { padding: 22px 20px; border-radius: 20px; background: linear-gradient(140deg, #22324f, #151c2c); color: #fff; margin-bottom: 14px; }
+.st-hero-t { font-size: 24px; font-weight: 600; letter-spacing: -.4px; }
+.st-hero-s { opacity: .78; font-size: 14px; margin-top: 4px; }
+.st-unavail { text-align: center; padding: 34px 22px; color: var(--text2); line-height: 1.5; }
+.st-unavail b { display: block; color: var(--text); font-size: 17px; margin: 12px 0 6px; }
+.st-unavail p { margin: 0 0 6px; font-size: 14px; }
+.st-unavail-i { width: 64px; height: 64px; border-radius: 18px; background: var(--button); display: grid; place-items: center; margin: 0 auto; color: var(--text2); }
+.st-unavail-i svg.i { width: 30px; height: 30px; stroke-width: 1.7; }
+.st-needs { font-size: 12.5px; color: var(--text3); }
+.st-notice { display: flex; align-items: flex-start; background: var(--card); border-radius: var(--radius); padding: 14px; margin-bottom: 14px; line-height: 1.45; font-size: 14px; color: var(--text2); box-shadow: var(--st-shadow); }
+.st-notice > span { color: var(--accent); margin-right: 12px; }
+.st-notice b { display: block; color: var(--text); margin-bottom: 2px; }
+.st-form > * + * { margin-top: 10px; }
+.st-form { margin-bottom: 6px; }
+.st-ta { height: auto; min-height: 92px; padding: 12px 14px; resize: vertical; line-height: 1.45; }
+select.field { -webkit-appearance: none; appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text3) 50%), linear-gradient(135deg, var(--text3) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 36px; }
+.st-btnrow { display: flex; margin: 10px 0; }
+.st-btnrow > * { flex: 1; }
+.st-btnrow > * + * { margin-left: 10px; }
+.st-iconbtn { width: 38px; height: 38px; border-radius: 19px; background: var(--button); color: var(--text); display: grid; place-items: center; flex: none; }
+.st-iconbtn svg.i { width: 18px; height: 18px; }
+.st-chipbtn { height: 32px; padding: 0 12px; border-radius: 16px; background: var(--button); color: var(--text); font-size: 13.5px; font-weight: 500; display: inline-flex; align-items: center; }
+.st-chipbtn svg.i { width: 16px; height: 16px; margin-right: 6px; }
+.st-chips { display: flex; flex-wrap: wrap; margin: 6px 0 4px; }
+.st-chips button { height: 32px; padding: 0 13px; border-radius: 16px; background: var(--button); color: var(--text2); font-size: 13.5px; font-weight: 500; margin: 0 8px 8px 0; display: inline-flex; align-items: center; }
+.st-chips button.on { background: var(--accent); color: var(--accent-ink); }
+.st-chips button svg.i { width: 16px; height: 16px; }
+.st-folders { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 10px -16px 2px; padding: 0 16px; }
+.st-folders::-webkit-scrollbar { display: none; }
+.st-folders button { flex: none; }
+.st-check { width: 26px; height: 26px; border-radius: 13px; border: 2px solid var(--text3); color: #fff; display: grid; place-items: center; flex: none; }
+.st-check.on { background: var(--accent); border-color: var(--accent); }
+.st-check svg.i { width: 15px; height: 15px; stroke-width: 3; }
+.st-done { color: var(--text3); text-decoration: line-through; }
+.st-prog { height: 4px; border-radius: 2px; background: var(--button); position: absolute; left: 58px; right: 14px; bottom: 6px; overflow: hidden; }
+.st-prog i { display: block; height: 100%; background: var(--accent); transition: width .25s; }
+.card .row { position: relative; }
+.st-apphead { display: flex; align-items: center; margin: 4px 0 16px; }
+.st-apphead .grow { margin-left: 14px; }
+.st-apphead-n { font-size: 22px; font-weight: 600; letter-spacing: -.3px; }
+.st-dark { background: #000; color: #fff; }
+.st-preview-img { width: 100%; border-radius: 14px; display: block; margin-bottom: 14px; background: #000; }
+.st-preview-media { width: 100%; display: block; margin-bottom: 14px; border-radius: 14px; background: #000; }
+.st-preview-text { white-space: pre-wrap; word-break: break-word; background: var(--card); border-radius: 14px; padding: 14px; font-size: 13px; max-height: 50vh; overflow: auto; user-select: text; -webkit-user-select: text; }
+.st-sample { margin-top: 6px; color: var(--text2); line-height: 1.4; }
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+/* ---------- Atlas and Beacon maps ---------- */
+.st-mapbody { display: flex; flex-direction: column; padding-bottom: calc(30px + var(--sab)) !important; }
+.st-mapsearch { margin-bottom: 10px; }
+.st-map { position: relative; height: 46vh; min-height: 240px; border-radius: 18px; overflow: hidden; background: #dfe3e8; touch-action: none; flex: none; }
+.st-map-small { height: 220px; min-height: 0; margin-bottom: 10px; }
+.st-map-tiles img { position: absolute; width: 256px; height: 256px; user-select: none; -webkit-user-drag: none; }
+.st-map-over { position: absolute; left: 0; top: 0; pointer-events: none; }
+.st-map-pins { position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; }
+.st-pin { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: #ff5a4f; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.35); }
+.st-pin.me { background: #2f7cf6; }
+.st-pin.dest { width: 22px; height: 22px; margin: -22px 0 0 -11px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
+.st-map-attr { position: absolute; right: 6px; bottom: 4px; font-size: 10px; color: #333; background: rgba(255,255,255,.75); padding: 1px 5px; border-radius: 4px; }
+.st-map-zoom { position: absolute; right: 10px; top: 10px; display: flex; flex-direction: column; background: rgba(255,255,255,.92); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.18); overflow: hidden; }
+.st-map-btn { width: 40px; height: 40px; display: grid; place-items: center; color: #1b2230; }
+.st-map-zoom .st-map-btn + .st-map-btn { border-top: 1px solid rgba(0,0,0,.1); }
+.st-map-loc { position: absolute; right: 10px; bottom: 26px; background: rgba(255,255,255,.95); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+.st-map-loc.busy { opacity: .5; }
+.st-map-offline::after { content: "Map pictures can't load: no internet"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,.65); color: #fff; padding: 8px 12px; border-radius: 10px; font-size: 13px; }
+.st-sheet { margin-top: 12px; }
+.st-sheet-t { display: block; font-size: 18px; margin: 4px 0 2px; }
+.st-map-status { color: var(--text3); font-size: 12.5px; line-height: 1.45; margin: 12px 4px; }
+.st-steps { margin-top: 12px; }
+.st-devhead { margin: 0 2px 12px; }
+.st-devname { font-size: 22px; font-weight: 600; letter-spacing: -.3px; }
+
+/* ---------- Nudge ---------- */
+.st-smarts { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px; margin-bottom: 4px; }
+.st-smart { background: var(--card); border-radius: 14px; padding: 12px; text-align: left; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; align-items: center; box-shadow: var(--st-shadow); color: var(--text); }
+.st-smart .sq { width: 30px; height: 30px; border-radius: 15px; display: grid; place-items: center; color: #fff; }
+.st-smart .sq svg.i { width: 17px; height: 17px; }
+.st-smart b { justify-self: end; font-size: 22px; font-weight: 600; }
+.st-smart > span:last-child { grid-column: 1 / -1; color: var(--text2); font-size: 13.5px; font-weight: 500; margin-top: 6px; }
+.st-smart.on { box-shadow: 0 0 0 2px var(--accent); }
+
+/* ---------- Screenroom ---------- */
+.st-vgrid { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 14px 12px; }
+.st-vcell { cursor: pointer; min-width: 0; }
+.st-vframe { position: relative; height: 0; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden; background: #000; }
+.st-vthumb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+.st-vdur { position: absolute; right: 6px; bottom: 8px; background: rgba(0,0,0,.6); color: #fff; font-size: 11px; padding: 1px 5px; border-radius: 5px; font-variant-numeric: tabular-nums; }
+.st-vtrack { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255,255,255,.3); }
+.st-vprog { display: block; height: 100%; background: #ff4d5e; }
+.st-vname { font-weight: 600; font-size: 14px; margin-top: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-player { width: calc(100% + 32px); margin: 0 -16px; display: block; background: #000; max-height: 60vh; }
+.st-pbar { display: flex; justify-content: space-around; margin: 16px 0; }
+.st-pbtn { display: flex; flex-direction: column; align-items: center; color: #fff; font-size: 11.5px; min-width: 60px; }
+.st-pbtn svg.i { width: 26px; height: 26px; margin-bottom: 4px; }
+
+/* ---------- Voice Pin and Capture ---------- */
+.st-rec { text-align: center; padding: 18px 0 6px; }
+.st-rec-time { font-family: InterDisplay, Inter; font-weight: 300; font-size: 52px; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
+.st-meter { width: 100%; height: 40px; margin: 8px 0 14px; }
+.st-recbtn { width: 78px; height: 78px; border-radius: 50%; border: 4px solid var(--text); display: grid; place-items: center; margin: 0 auto 12px; }
+.st-recbtn i { width: 58px; height: 58px; border-radius: 50%; background: #f2555d; transition: all .2s; }
+.st-recbtn.on i { width: 30px; height: 30px; border-radius: 8px; }
+.st-recdot { color: #f2555d; font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+
+/* ---------- PocketPay ---------- */
+.st-cards > * + * { margin-top: 12px; }
+.st-cardmini { height: 96px; border-radius: 16px; color: #fff; padding: 16px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--st-shadow); cursor: pointer; }
+.st-cardmini b { font-size: 17px; }
+.st-cardmini span { opacity: .8; font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+.st-pass { border-radius: 20px; color: #fff; padding: 20px; box-shadow: var(--st-shadow); }
+.st-pass-n { font-size: 20px; font-weight: 600; margin-bottom: 18px; }
+.st-pass-code { background: #fff; color: #000; border-radius: 12px; padding: 16px; text-align: center; }
+.st-ean { width: 100%; height: 90px; display: block; }
+.st-pass-num { font-size: 22px; font-weight: 600; letter-spacing: .12em; margin-top: 8px; word-break: break-all; font-variant-numeric: tabular-nums; }
+
+/* ---------- Scanwise and Assist magnifier ---------- */
+.st-scanview, .st-magview { position: relative; height: 0; padding-bottom: 110%; border-radius: 18px; overflow: hidden; background: #000; margin-bottom: 12px; }
+.st-scanvid, .st-mag { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+.st-scanframe { position: absolute; left: 18%; right: 18%; top: 22%; bottom: 22%; border: 3px solid rgba(255,255,255,.9); border-radius: 18px; box-shadow: 0 0 0 999px rgba(0,0,0,.28); }
+.st-scanframe.doc { left: 8%; right: 8%; top: 6%; bottom: 6%; border-radius: 8px; }
+.st-scanmsg { text-align: center; margin-bottom: 12px; }
+
+/* ---------- Lingua ---------- */
+.st-langrow { display: flex; align-items: center; margin-bottom: 10px; }
+.st-langrow .st-lang { flex: 1; min-width: 0; }
+.st-langrow > * + * { margin-left: 8px; }
+.st-langrow + .st-ta { margin-bottom: 10px; }
+.st-out { margin-top: 12px; }
+.st-outtext { font-size: 19px; line-height: 1.45; display: block !important; user-select: text; -webkit-user-select: text; }
+.st-outacts .st-iconbtn + .st-iconbtn { margin-left: 8px; }
+
+/* ---------- SafeLine ---------- */
+.st-sos { margin: 6px 2px 14px; }
+.st-sos-t { font-size: 22px; font-weight: 600; }
+.st-sosbtn { width: 100%; height: 60px; border-radius: 16px; background: #c62f39; color: #fff; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+.st-sosbtn svg.i { margin-right: 10px; }
+.st-sosbtn:disabled { background: var(--button); color: var(--text3); }
+.st-medical { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(118px + var(--sab)); height: 32px; padding: 0 14px; border-radius: 16px; background: rgba(198,47,57,.85); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; z-index: 5; }
+.st-medical svg.i { width: 16px; height: 16px; margin-right: 6px; }
+.st-medov { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 99; background: var(--bg); color: var(--text); padding: calc(var(--bar) + 16px) 22px calc(24px + var(--sab)); overflow-y: auto; }
+.st-medov h2 { color: #f2555d; margin: 0 0 16px; }
+.st-medov p { margin: 0 0 14px; line-height: 1.4; }
+.st-medov p b { display: block; font-size: 12px; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+
+/* ---------- Torch ---------- */
+.st-torchbody { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.st-torch { width: 132px; height: 132px; border-radius: 50%; background: var(--button); color: var(--text2); display: grid; place-items: center; margin-top: 12vh; transition: background .2s, color .2s; }
+.st-torch svg.i { width: 54px; height: 54px; stroke-width: 1.6; }
+.st-torch.on { background: #ffe08a; color: #3a2f08; box-shadow: 0 0 60px rgba(255,224,138,.45); }
+.st-torch-l { font-size: 18px; font-weight: 600; margin: 16px 0 6px; }
+
+/* ---------- Shutter ---------- */
+.st-cammodes { position: absolute; left: 0; right: 0; bottom: calc(142px + var(--sab)); display: flex; justify-content: center; }
+.st-cammodes button { color: rgba(255,255,255,.75); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 0 16px; min-height: 44px; border-radius: 22px; }
+.st-cammodes button.on { color: #ffcf4d; background: rgba(0,0,0,.35); }
+.cam.st-video .cam-shutter { background: #f2555d; }
+.cam.st-recording .cam-shutter { border-radius: 18px; transform: scale(.6); box-shadow: 0 0 0 9px rgba(0,0,0,.35), 0 0 0 15px #fff; }
+.st-camtime { position: absolute; left: 50%; transform: translateX(-50%); top: calc(var(--bar) + 12px); background: #f2555d; color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; padding: 3px 10px; border-radius: 8px; font-size: 14px; }
+.st-camctl { position: absolute; left: 22px; right: 22px; bottom: calc(196px + var(--sab)); display: flex; align-items: center; color: #fff; }
+.st-camctl svg.i { margin-right: 10px; width: 18px; height: 18px; }
+.st-focus { position: absolute; width: 70px; height: 70px; margin: -35px 0 0 -35px; border: 2px solid #ffcf4d; border-radius: 10px; pointer-events: none; }
+
+/* ---------- Moments ---------- */
+.st-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 2px; margin: 4px -16px 0; }
+.st-cell { position: relative; height: 0; padding-bottom: 100%; background: #1c1f27 center/cover no-repeat; overflow: hidden; border-radius: 0; }
+.st-cell video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.st-cell-badge { position: absolute; right: 5px; bottom: 4px; color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.st-cell-badge svg.i { width: 13px; height: 13px; margin-right: 2px; fill: #fff; }
+.st-cell-fav { position: absolute; left: 5px; bottom: 3px; color: #fff; }
+.st-cell-fav svg.i { width: 15px; height: 15px; fill: #fff; }
+.st-count { text-align: center; color: var(--text3); font-size: 13px; padding: 16px; }
+.st-albums { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 16px 12px; }
+.st-album { text-align: left; color: var(--text); }
+.st-album-c { height: 0; padding-bottom: 100%; border-radius: 14px; background: var(--card) center/cover no-repeat; position: relative; color: var(--text3); }
+.st-album-c svg.i { position: absolute; left: 50%; top: 50%; margin: -15px 0 0 -15px; width: 30px; height: 30px; }
+.st-album b { display: block; margin-top: 7px; font-size: 14px; }
+.st-album span { color: var(--text3); font-size: 13px; }
+.st-viewer { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; background: #000; color: #fff; display: flex; flex-direction: column; }
+.st-vtop { display: flex; align-items: center; justify-content: space-between; padding: calc(var(--bar) + 4px) 14px 8px; }
+.st-vtitle { text-align: center; line-height: 1.25; }
+.st-vtitle b { display: block; font-size: 15px; }
+.st-vtitle span, .st-vpos { font-size: 12px; opacity: .7; }
+.st-vbtn { color: #fff; height: 36px; min-width: 36px; padding: 0 10px; border-radius: 18px; background: rgba(255,255,255,.12); display: inline-flex; align-items: center; justify-content: center; font-weight: 500; }
+.st-vbtn svg.i { width: 18px; height: 18px; }
+.st-vsave { background: #ffcf4d; color: #1b1606; font-weight: 600; }
+.st-vstage { flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 0; }
+.st-vmedia { max-width: 100%; max-height: 100%; object-fit: contain; }
+.st-vbar { display: flex; justify-content: space-around; padding: 12px 6px calc(30px + var(--sab)); }
+.st-vact { color: #fff; display: flex; flex-direction: column; align-items: center; font-size: 10.5px; min-width: 52px; }
+.st-vact svg.i { width: 21px; height: 21px; margin-bottom: 4px; }
+.st-editcv { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 8px; }
+.st-editcanvas { max-width: 100%; max-height: 100%; }
+.st-edittools { padding: 6px 16px calc(28px + var(--sab)); background: #0b0b0d; }
+.st-edittools .st-chips button { background: rgba(255,255,255,.1); color: #ddd; }
+.st-edittools .st-chips button.on { background: #ffcf4d; color: #1b1606; }
+.st-slider { display: flex; align-items: center; font-size: 13px; margin: 4px 0 8px; }
+.st-slider span { width: 90px; flex: none; opacity: .8; }
+
+/* ---------- Pocket Notes ---------- */
+.st-notebar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.st-saved { color: var(--text3); font-size: 12.5px; }
+.st-note { min-height: 62vh; border: 0; background: transparent; font-size: 17px; line-height: 1.5; padding: 4px 0; height: auto; resize: none; }
+.st-checks { margin-bottom: 10px; }
+
+/* ---------- QuickCalc ---------- */
+.st-calcwin { background: #0b0c10 !important; color: #fff; }
+.st-calcwin > header .acts button { background: #1d2029; }
+.st-calc { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: calc(34px + var(--sab)) !important; }
+.st-calc-screen { padding: 0 6px 14px; text-align: right; }
+.st-calc-sub { color: #8b91a1; font-size: 20px; min-height: 28px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-calc-row { display: flex; align-items: center; }
+.st-calc-disp { flex: 1; font-family: InterDisplay, Inter; font-weight: 300; font-size: 64px; letter-spacing: -1.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; direction: ltr; font-variant-numeric: tabular-nums; }
+.st-calc-back { width: 40px; height: 40px; color: #8b91a1; display: grid; place-items: center; margin-right: 6px; }
+.st-calc-pad { display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 11px; }
+.st-key { height: 72px; border-radius: 20px; font-size: 27px; font-weight: 400; color: #fff; background: #23262f; }
+.st-key.fn { background: #3a3e4a; font-size: 22px; }
+.st-key.op { background: #e8893a; font-size: 30px; }
+.st-key.eq { background: #f29d4b; font-size: 30px; }
+.st-key:active { filter: brightness(1.25); }
+.st-calc-pad.sci .st-key { height: 54px; border-radius: 16px; font-size: 22px; }
+.st-calc-pad.sci .st-key.fn { font-size: 17px; }
+
+/* ---------- Skycast ---------- */
+.st-wxstamp { font-size: 12px; line-height: 1.45; opacity: .72; margin: 18px 4px 8px; }
+.st-wxloc { background: rgba(255,255,255,.16); color: #fff; margin: 0 4px 20px; }
+
+/* ---------- home bar: one invisible bar, like an iPhone's (owner, 2026-11-02) ---------- */
+.win .homebar i, #homezone i { opacity: 0; transition: opacity .2s; }
+:root.show-homebar .win .homebar i { opacity: .55; }
+#homezone { position: absolute; left: 0; right: 0; bottom: 0; height: calc(16px + var(--sab)); z-index: 12; touch-action: none; display: flex; justify-content: center; align-items: flex-end; padding-bottom: calc(var(--sab) / 2 + 2px); }
+#homezone i { width: 134px; height: 5px; border-radius: 3px; background: #fff; }
+:root.show-homebar #homezone i { opacity: .6; }
+
+/* ---------- light look ---------- */
+:root.light { --accent: #2f7cf6; --bg: #f2f3f7; --card: #ffffff; --button: #e7e9ef; }
+:root.light .app .tile { box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 6px 14px rgba(20,30,60,.14); }
+:root.light #dock { background: rgba(255,255,255,.32); border-color: rgba(255,255,255,.55); backdrop-filter: blur(26px) saturate(1.8); -webkit-backdrop-filter: blur(26px) saturate(1.8); }
+:root.light .widget { background: rgba(255,255,255,.55); border-color: rgba(255,255,255,.6); color: #12151c; backdrop-filter: blur(26px) saturate(1.6); -webkit-backdrop-filter: blur(26px) saturate(1.6); }
+:root.light .widget h4, :root.light .widget .muted { color: #4a5163; }
+:root.light #homepill { background: rgba(255,255,255,.4); color: #fff; }
+:root.light .win > header .acts button { background: #e7e9ef; }
+:root.light .card { box-shadow: 0 1px 2px rgba(16,19,26,.05); }
+:root.light .st-hero { background: linear-gradient(140deg, #dfe9fb, #eef1f8); color: #12151c; }
+:root.light .st-unavail-i { background: #e7e9ef; }
+
+/* Pets Island: the black pill around the front camera, as in pets.css (owner, 2026-11-02). */

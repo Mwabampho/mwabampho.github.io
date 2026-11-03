@@ -1,0 +1,563 @@
+{
+ "platform": "web",
+ "channel": "stable",
+ "version": "1.2.0",
+ "cache": "petsos-1.2.0-3b0fbf2e92f6",
+ "filesBase": "../releases/1.2.0/",
+ "notes": "• Lenda, Sonix and StepMail are now built-in default apps\n• New Phone, Contacts, Messages and Camera apps\n• Default Apps in Settings\n• Software Update now downloads, checks and installs updates inside Pets OS",
+ "restartRequired": true,
+ "os": {
+  "commit": "91aa5f3fd1aebada73e853094bf3590f3ecdce45"
+ },
+ "apps": {
+  "pets:activities": {
+   "name": "Activities",
+   "version": "1.2.0"
+  },
+  "pets:calculator": {
+   "name": "Calculator",
+   "version": "1.2.0"
+  },
+  "pets:calendar": {
+   "name": "Calendar",
+   "version": "1.2.0"
+  },
+  "pets:camera": {
+   "name": "Camera",
+   "version": "1.2.0"
+  },
+  "pets:capsule": {
+   "name": "Capsule",
+   "version": "1.2.0"
+  },
+  "pets:clarice": {
+   "name": "Clarice",
+   "version": "1.2.0"
+  },
+  "pets:clock": {
+   "name": "Clock",
+   "version": "1.2.0"
+  },
+  "pets:contacts": {
+   "name": "Contacts",
+   "version": "1.2.0"
+  },
+  "pets:files": {
+   "name": "Files",
+   "version": "1.2.0"
+  },
+  "pets:lenda": {
+   "name": "Lenda",
+   "version": "2.1.0",
+   "source": "ShouldBe-Desktop/apps/lenda"
+  },
+  "pets:messages": {
+   "name": "Messages",
+   "version": "1.2.0"
+  },
+  "pets:milo": {
+   "name": "Milo",
+   "version": "1.2.0"
+  },
+  "pets:moments": {
+   "name": "Moments",
+   "version": "1.2.0"
+  },
+  "pets:ostore": {
+   "name": "O Store",
+   "version": "1.2.0"
+  },
+  "pets:pen": {
+   "name": "Pen",
+   "version": "1.2.0"
+  },
+  "pets:phone": {
+   "name": "Phone",
+   "version": "1.2.0"
+  },
+  "pets:pip": {
+   "name": "Pip",
+   "version": "1.2.0"
+  },
+  "pets:rest": {
+   "name": "Rest",
+   "version": "1.2.0"
+  },
+  "pets:settings": {
+   "name": "Settings",
+   "version": "1.2.0"
+  },
+  "pets:sonix": {
+   "name": "Sonix",
+   "version": "2.0.0",
+   "source": "ShouldBe-Desktop/apps/sonix"
+  },
+  "pets:stepmail": {
+   "name": "StepMail",
+   "version": "1.8.1",
+   "source": "ShouldBe-Desktop/apps/stepmail"
+  },
+  "pets:syncro": {
+   "name": "Syncro",
+   "version": "1.2.0"
+  },
+  "pets:weather": {
+   "name": "Weather",
+   "version": "1.2.0"
+  }
+ },
+ "files": [
+  {
+   "path": "apps/lenda/app-version.txt",
+   "size": 6,
+   "sha256": "c89b87c262e9d5ffd20e73aac74a1772adcc9f5a21682cc33adcf5086e5fef5c",
+   "type": "text/plain"
+  },
+  {
+   "path": "apps/lenda/app.js",
+   "size": 32789,
+   "sha256": "f405b9f142eafca3752fbfe567133dff6797682b9b71ac3ba3088183cfb8761c",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/lenda/dates.js",
+   "size": 4956,
+   "sha256": "141ddb9286e7ee3ef048830b34143cb4af8f48f36094fb17d30460fe4e9d72df",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/lenda/george-icon.png",
+   "size": 70266,
+   "sha256": "79ebdc1eb60d28a75ef58a3378a9e25b71cbb7ca81feb0c204034e207c5c3a8e",
+   "type": "image/png"
+  },
+  {
+   "path": "apps/lenda/george.js",
+   "size": 174834,
+   "sha256": "c234a1bdfdaf5cf8decfdf3f762892508e62a29cd0d8eb87e098e3f7215b129a",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/lenda/index.html",
+   "size": 478,
+   "sha256": "44382ddef8426f59972f208783da38ed05e8da0f33e57d1e204ef8708c1c482d",
+   "type": "text/html"
+  },
+  {
+   "path": "apps/lenda/pets-icon.png",
+   "size": 1345,
+   "sha256": "1a529e2de6184c932529c48d721c1e2e53eacaf6e5581b48d71de9249b149917",
+   "type": "image/png"
+  },
+  {
+   "path": "apps/lenda/phone.css",
+   "size": 1164,
+   "sha256": "f1d23573bb4d5739f0aded7394d70b2ebf0b46f39e57590f58fc1fe9e01d3457",
+   "type": "text/css"
+  },
+  {
+   "path": "apps/lenda/style.css",
+   "size": 11185,
+   "sha256": "f2afb7838d81aec11a21bec797211ef63d9d5a38ecbcdd986e8b552709ea5844",
+   "type": "text/css"
+  },
+  {
+   "path": "apps/shim.js",
+   "size": 18362,
+   "sha256": "3a0b56d1bdeab5a227ab3dd6b76ddaf5b882ce2d0bb5b094f19a4193eb61a98d",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/sonix/app-version.txt",
+   "size": 6,
+   "sha256": "c28fcca53637bc88e124af1725df13cb98c69dedefd62fb3cdbe1cdb6b760624",
+   "type": "text/plain"
+  },
+  {
+   "path": "apps/sonix/app.js",
+   "size": 34985,
+   "sha256": "f8d3eba21622b59cfd246eb0ec5be914a5be3c1ef643ef11abba0666f7959f49",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/sonix/audio/cactic-1.wav",
+   "size": 458684,
+   "sha256": "88e0f48c6edb0874e40e594cd6658fef4396e52b4d489cf0e576667998d62c09",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/cactic-2.wav",
+   "size": 396944,
+   "sha256": "377ea3394713c9af6b3b00b3be7bd2e57408c00073b619d9762234af9b9c25c7",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/cactic-3.wav",
+   "size": 458684,
+   "sha256": "7e266c64f918f58ec3c534009c0e9d300a80ad81314c472ca71e8e74a29ad76e",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-1.wav",
+   "size": 529244,
+   "sha256": "ca59b85bc97a2537395af0d5fa0d4caff05dc4f1559e9c53752d9993b2188a1d",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-2.wav",
+   "size": 529244,
+   "sha256": "0de664ad260b99b4e82bb8ec92b181740175ca8cc2089307e9a2e0964313f010",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-3.wav",
+   "size": 529244,
+   "sha256": "9738396e0c692a5e97cde73b29fa418164d76a2d59fbeb7203f25432897b0e1e",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-4.wav",
+   "size": 529244,
+   "sha256": "cce41a15362ac892f843bfeffc5e19ed9d50d720b0780b5066f3e2237ce64dc8",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-5.wav",
+   "size": 529244,
+   "sha256": "9c430896c75d8f0a0c111915ce42ff5f84142dbd5fdb96693681a1c6379eb28f",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-6.wav",
+   "size": 529244,
+   "sha256": "44f2e11142175a2deceb96bd6c30319224586adf269c7369cf5ab877494cef69",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-7.wav",
+   "size": 529244,
+   "sha256": "2e04cde962f622b9595f3db14331b91d8d05504d5a283e85a95bb1c04815f566",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/audio/track-8.wav",
+   "size": 529244,
+   "sha256": "f52aa1ea30cb1c1ff975094413c6a073b429c07d7fb3df71042651524c969cee",
+   "type": "audio/x-wav"
+  },
+  {
+   "path": "apps/sonix/catalogue.js",
+   "size": 10785,
+   "sha256": "b9d6e706393205e5a4c6306fc90c9a6a99cc234917908dcc6da7c117386ac6ba",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/sonix/icons.js",
+   "size": 5877,
+   "sha256": "ccb92d8bbf588ee4573a81f8c7d55710619f2cff91225042ee98e96014b1d08d",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/sonix/index.html",
+   "size": 5325,
+   "sha256": "e7185c46ea9dc021ac7eeac5aa48ee2ce7e6e11ac4302013ff5895b823331226",
+   "type": "text/html"
+  },
+  {
+   "path": "apps/sonix/pets-icon.png",
+   "size": 148859,
+   "sha256": "0c1a280869838f884c99eb6be945e6733b16ba6a1483784017a0a35b38321baf",
+   "type": "image/png"
+  },
+  {
+   "path": "apps/sonix/recorder-worklet.js",
+   "size": 428,
+   "sha256": "82126fa3a66ab68d6e8a6390013a65913b6c4edbbdf04012736d28441a5418d8",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/sonix/studio.js",
+   "size": 4868,
+   "sha256": "ee22ee6b7c7ddc14c520fa48a483a5584b55bd7a349f5eff7bd0a8b6db238267",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/sonix/style.css",
+   "size": 14310,
+   "sha256": "c2f3f5f049aac63cdb3f2efbd565a65482cdbf776653a2ebf8cfa8eb7825f8c6",
+   "type": "text/css"
+  },
+  {
+   "path": "apps/stepmail/app-version.txt",
+   "size": 6,
+   "sha256": "25cec9739d3218e48acc5d8c3d4333e1d624121c5b7ab3bcddc71d0fa0134b83",
+   "type": "text/plain"
+  },
+  {
+   "path": "apps/stepmail/app.js",
+   "size": 68738,
+   "sha256": "b3c90b257aaa623ea00639fae1df730d9347b824a30f3b840159f8ba1abfddae",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/stepmail/icons.js",
+   "size": 2874,
+   "sha256": "8cd2e08801d55883da13b30a8cc79591c8b70ac654b8074f9bb7762f5534c774",
+   "type": "text/javascript"
+  },
+  {
+   "path": "apps/stepmail/index.html",
+   "size": 595,
+   "sha256": "6474d0f279f82d8e86d2e2187cace6f3a1dab5be6383e76024a661a5502ed312",
+   "type": "text/html"
+  },
+  {
+   "path": "apps/stepmail/pets-icon.png",
+   "size": 23384,
+   "sha256": "b027c911127d82890154abe8196aba6dff8d1f7449abcc20880871e19b58072f",
+   "type": "image/png"
+  },
+  {
+   "path": "apps/stepmail/phone.css",
+   "size": 824,
+   "sha256": "8ac6e2e16df20c07ee3404538fd34260c5dc1f6a170cef4e4f0cdf8ebb67fe78",
+   "type": "text/css"
+  },
+  {
+   "path": "apps/stepmail/style.css",
+   "size": 14574,
+   "sha256": "015dfcd1025e2c56436bc995f8b865e98cebcca95f456cd542af4d4bd4cc68f2",
+   "type": "text/css"
+  },
+  {
+   "path": "css/pets.css",
+   "size": 57392,
+   "sha256": "dbc23bc2d8020b52a9788ab7c1fd1dcdb7d6c40eb7cdd00eb19a85fe6ab8a707",
+   "type": "text/css"
+  },
+  {
+   "path": "fonts/Inter-Medium.otf",
+   "size": 622088,
+   "sha256": "1e65171fccd6f445b7742728454620ec2867356c849af78e71bf2c4f0e3d97ba",
+   "type": "font/otf"
+  },
+  {
+   "path": "fonts/Inter-Regular.otf",
+   "size": 605092,
+   "sha256": "be6d709dcb730ddaf050cbdae6fe89bd56d5d14dc66885639bbf6f06bd03521b",
+   "type": "font/otf"
+  },
+  {
+   "path": "fonts/Inter-SemiBold.otf",
+   "size": 624244,
+   "sha256": "bd68706b7bf8b3c580ae57685a2116bb1704b3a9998309ccfec7cd486f8a593e",
+   "type": "font/otf"
+  },
+  {
+   "path": "fonts/InterDisplay-Light.otf",
+   "size": 601544,
+   "sha256": "15ffcace125a2efd9cad65b5ca7a9f507e57a1e4d001c07353d3f45ec5e63f0a",
+   "type": "font/otf"
+  },
+  {
+   "path": "img/alpine-dusk.jpg",
+   "size": 499849,
+   "sha256": "00bd22cc6063387ea56535a93826cd17360183a09c57705fd1a3fd452f042885",
+   "type": "image/jpeg"
+  },
+  {
+   "path": "img/app-icon-192.png",
+   "size": 11477,
+   "sha256": "51a23428d1e74504e398af46088f5238769f6c26c1fb959ee95257d194256392",
+   "type": "image/png"
+  },
+  {
+   "path": "img/app-icon-512.png",
+   "size": 52983,
+   "sha256": "01c0ba9976ec7dca3cc4f11705840cf91f89d0a125850bc4e69b4bf4aae5fa9f",
+   "type": "image/png"
+  },
+  {
+   "path": "img/apple-touch-icon.png",
+   "size": 11486,
+   "sha256": "d7d565fbfba15c2dfc9f95f2675d0e14e32638b1dc57043ff30a83c944e9f6d4",
+   "type": "image/png"
+  },
+  {
+   "path": "img/avatar-peak.jpg",
+   "size": 15969,
+   "sha256": "2b0a2baeac66473d982d9c8b4d20318b934dff17664d42e795830e4c6b21f87c",
+   "type": "image/jpeg"
+  },
+  {
+   "path": "img/clarice-avatar.jpg",
+   "size": 9153,
+   "sha256": "81d846af2af5efe6547938720520141312faea0f189b5c6475e0c88d714e5503",
+   "type": "image/jpeg"
+  },
+  {
+   "path": "img/icons/clarice.png",
+   "size": 20561,
+   "sha256": "87cb8846dcdca5cefae0f53109254e097b5340f0f76861c65ba8cbfc1f3aa9f8",
+   "type": "image/png"
+  },
+  {
+   "path": "img/icons/milo.png",
+   "size": 12474,
+   "sha256": "5d680e451fc51d94b739380ab254165c4c094b2badea62fae0a5d297ca3d363e",
+   "type": "image/png"
+  },
+  {
+   "path": "img/icons/moments.png",
+   "size": 21614,
+   "sha256": "498635e0e26f8b968c568131039b47aee018e6780efc3b482da082055b9e40ce",
+   "type": "image/png"
+  },
+  {
+   "path": "img/icons/ostore.png",
+   "size": 27210,
+   "sha256": "c1a8667da4aac434229b0afb75f49dfc39186659b196ea0a1564fad6c0c9a5b6",
+   "type": "image/png"
+  },
+  {
+   "path": "img/icons/pen.png",
+   "size": 18434,
+   "sha256": "82b5307cc5b70dc7f0c1d516eb2311b1b90871430be7c342744745f1b012618e",
+   "type": "image/png"
+  },
+  {
+   "path": "img/icons/rest.png",
+   "size": 38801,
+   "sha256": "45ac5b2db2fe7a27e180abe9cd9d6093401583aad625d60d71f883e5676e873a",
+   "type": "image/png"
+  },
+  {
+   "path": "img/petsos-footprints.png",
+   "size": 115409,
+   "sha256": "b6bd2e0995dbe00c0d1434f12587831f7e6d4e4e09d310adf21d73e1751f3685",
+   "type": "image/png"
+  },
+  {
+   "path": "img/rest-fionn-desk.png",
+   "size": 65357,
+   "sha256": "1903e10a2ed31642baf06165e38ff975feed8578597dce936865642572242d4e",
+   "type": "image/png"
+  },
+  {
+   "path": "index.html",
+   "size": 2584,
+   "sha256": "f330d409b981692b4f8142a3800ad0495804ec0cf4976648947120de5482f8fc",
+   "type": "text/html"
+  },
+  {
+   "path": "js/apps.js",
+   "size": 106019,
+   "sha256": "7bb99a0b02d3ac29f4e016201afba2533a33b3f1d24f353420bb32d9dfc2e9e8",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/core.js",
+   "size": 68379,
+   "sha256": "9041c64016fe6db3d5c0474dd436f79910023379fb68f4e485f395220d28e0b7",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/features.js",
+   "size": 14433,
+   "sha256": "805eb1fa182c7dd6ab7ceb2818844f90230a3587dd96bff6787b01371151f4f1",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/features2.js",
+   "size": 11568,
+   "sha256": "4aefda58921c40402078bde5447ae3c1cb932a798e2cf2bd5d26ba20efd3feb9",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/icons-hd.js",
+   "size": 9271,
+   "sha256": "cfeda42041066d2f68ebdf43217a959afceb4d693fead9a1e27becb1846403cd",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/icons.js",
+   "size": 20384,
+   "sha256": "005c82ef6482748ebddb2bbbf25a5e13e8422d3410012d11f54949879a8de7eb",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/nav.js",
+   "size": 8730,
+   "sha256": "d1bac3e01056ab0adf2ee251ae5b7f96c83f9f4f1681e3f9a43c60f7a8dbd6d6",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/phone.js",
+   "size": 38750,
+   "sha256": "5fdc7a044dbaafa181f6a78edd5f89738ba87041bc295bb88ef9d956b6c248af",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/selftest.js",
+   "size": 36323,
+   "sha256": "d40cdcc90b55ef8c155309faaf449ca295d567f1ab66f74f670455efa368f0c6",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/settings.js",
+   "size": 42802,
+   "sha256": "9a6716df38c66b2f20f0ae35aacd8300f86cbc5825dfb647998053b089af9b73",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/stephone.js",
+   "size": 45126,
+   "sha256": "240676d3e8213f42094a6b10cf6cedf5265042738499f9782df6a52f932659f8",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/store.js",
+   "size": 13985,
+   "sha256": "26866f834ec7975d8475991012dc81a3d6f1ede9603454ae15342720ac7fac94",
+   "type": "text/javascript"
+  },
+  {
+   "path": "js/updates.js",
+   "size": 14808,
+   "sha256": "9c51c65e248df555a763c3e51c5e92e4c5b7171dca75d56a747bbe135a10bf09",
+   "type": "text/javascript"
+  },
+  {
+   "path": "licenses/INTER-COPYRIGHT.txt",
+   "size": 6267,
+   "sha256": "781ffde332be9bdb6ccc527e6ccd6d6a586f3960c2d598b5580b8c7d1ae53d66",
+   "type": "text/plain"
+  },
+  {
+   "path": "licenses/LUCIDE-LICENSE.txt",
+   "size": 3208,
+   "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
+   "type": "text/plain"
+  },
+  {
+   "path": "manifest.json",
+   "size": 440,
+   "sha256": "343b245e622cfb17bfb73cad73ed4d4f3b3a5852bbe48e3b3fdf00bda02fd552",
+   "type": "application/json"
+  },
+  {
+   "path": "milo/welcome.html",
+   "size": 4109,
+   "sha256": "0c066f8d70b0edeb8fd151e2959516e54fd09f0cfe8ec7c849f9d9d70b8b42d6",
+   "type": "text/html"
+  },
+  {
+   "path": "sw.js",
+   "size": 2702,
+   "sha256": "89a3e8755f0e685830171401c467af1ac7756895b0e66ba5c1163772f70bab10",
+   "type": "text/javascript"
+  }
+ ],
+ "size": 10081112,
+ "serial": 1793585326
+}

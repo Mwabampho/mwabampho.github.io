@@ -1,0 +1,15 @@
+{
+  "app": "Clean",
+  "codename": "Arise",
+  "version": "0.2",
+  "build": 2,
+  "release": "Arise 0.2",
+  "published": "2026-09-27",
+  "coreRequiresThirdPartyApiKey": false,
+  "externalApiKeyMode": "prompt-on-demand-session-only",
+  "updatePage": "https://shouldbe.media/clean/updates",
+  "downloads": {
+    "macOS": "https://shouldbe.media/downloads/Clean-macOS-Arise-0.2.zip",
+    "iPhone": "https://shouldbe.media/downloads/Clean-iPhone-Arise-0.2.zip"
+  }
+}

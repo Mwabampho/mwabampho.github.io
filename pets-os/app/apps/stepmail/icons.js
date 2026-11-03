@@ -1,0 +1,26 @@
+// Line icons standing in for the SF Symbols the Mac app uses (drawn here, no external files).
+const P = {
+  tray: '<path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5.5 5h13L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z"/><path d="M7 8.5h10M6.2 11h11.6"/>',
+  star: '<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/>',
+  starfill: '<path fill="currentColor" d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/>',
+  paperplane: '<path d="M21 3L10 14"/><path d="M21 3l-6.5 18-4.5-7-7-4.5z"/>',
+  doc: '<path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4M9 12h6M9 15.5h6"/>',
+  archivebox: '<rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/>',
+  octagon: '<path d="M8.3 3h7.4L21 8.3v7.4L15.7 21H8.3L3 15.7V8.3z"/><path d="M12 7.5v6M12 16.5v.1"/>',
+  trash: '<path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 13.5h10l1-13.5M10 10.5v6M14 10.5v6"/>',
+  compose: '<path d="M11 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6"/><path d="M17.5 3.5l3 3L12 15l-4 1 1-4z"/>',
+  refresh: '<path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4.5h-4.5"/>',
+  reply: '<path d="M9.5 6L4 11.5 9.5 17"/><path d="M4 11.5h10a6 6 0 0 1 6 6V19"/>',
+  replyall: '<path d="M11 6L5.5 11.5 11 17"/><path d="M7 6L1.5 11.5 7 17"/><path d="M5.5 11.5h9a6 6 0 0 1 6 6V19"/>',
+  forward: '<path d="M14.5 6L20 11.5 14.5 17"/><path d="M20 11.5H10a6 6 0 0 0-6 6V19"/>',
+  envbadge: '<rect x="3" y="6" width="15" height="12" rx="1.5"/><path d="M3.5 7l7 5.5 7-5.5"/><circle cx="19" cy="6" r="2.6" fill="currentColor"/>',
+  envopen: '<path d="M3 10l9-6 9 6v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 10l9 6 9-6"/>',
+  spambin: '<path d="M4 7h16l-1.5 13h-13zM3 4h18M9.5 11l5 5M14.5 11l-5 5"/>',
+  paperclip: '<path d="M20 11.5l-8 8a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4L15 7"/>',
+  pencil: '<path d="M16.5 3.5l4 4L8 20H4v-4z"/>',
+  shieldok: '<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+  shieldwarn: '<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M12 8v5M12 16v.1"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.1"/>',
+  appicon: '<defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5856d6"/><stop offset="1" stop-color="#af52de"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6" fill="url(#sg)" stroke="none"/><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" stroke="none" font-family="system-ui,sans-serif">S</text>',
+};
+export const icon = (name) => `<svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${P[name] || ""}</svg>`;

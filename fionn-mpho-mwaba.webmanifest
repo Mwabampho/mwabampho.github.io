@@ -1,0 +1,14 @@
+{
+  "name": "Fionn Mpho Mwaba — ShouldBe AI",
+  "short_name": "Fionn AI",
+  "description": "ShouldBe's conversational AI for questions, coding, game design, research, learning and creativity.",
+  "start_url": "/fion-pomwaba",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "icons": [
+    {"src":"/pets-os-icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"/pets-os-icon-512.png","sizes":"512x512","type":"image/png"}
+  ]
+}

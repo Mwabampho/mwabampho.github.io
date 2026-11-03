@@ -1,0 +1,11 @@
+/* StepMail on the StepPhone: folders across the top, message list above the message. */
+.split { grid-template-columns: 1fr !important; grid-template-rows: auto minmax(0, 42%) minmax(0, 1fr); }
+.sidebar { flex-direction: row; align-items: center; gap: 8px; overflow-x: auto; overflow-y: hidden; padding: 8px 6px; border-right: 0; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.sidebar::-webkit-scrollbar { display: none; }
+.pad-brand, .side-email, .side-foot { display: none; }
+.new-msg { flex: none; margin: 0 4px; }
+.folders { flex-direction: row; padding: 0; gap: 4px; flex: none; }
+.folder { white-space: nowrap; padding: 8px 10px; min-height: 40px; }
+.side-status { flex: none; }
+.list { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+input, textarea, select { font-size: 16px; }

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Milo</title>
+<style>
+  @font-face { font-family: Inter; src: url(/fonts/Inter-Regular.otf); font-weight: 400; }
+  @font-face { font-family: Inter; src: url(/fonts/Inter-SemiBold.otf); font-weight: 600 700; }
+  :root { color-scheme: dark; --bg: #14121c; --card: #221f2e; --line: #34304a; --text: #f2effa; --text2: #b9b2d3; --accent: #8c7bff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font: 16px/1.45 Inter, system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+  main { max-width: 560px; margin: 0 auto; padding: 9vh 20px 32px; display: flex; flex-direction: column; align-items: center; }
+  .logo { width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  h1 { font-size: 34px; font-weight: 600; margin: 16px 0 2px; letter-spacing: -.4px; }
+  .tag { color: var(--text2); margin: 0 0 24px; text-align: center; }
+  form { width: 100%; display: flex; gap: 8px; }
+  input { flex: 1; min-width: 0; height: 50px; border-radius: 25px; border: 1px solid var(--line); background: var(--card); color: var(--text); padding: 0 20px; font: inherit; outline: none; }
+  input:focus { border-color: var(--accent); }
+  button { height: 50px; padding: 0 20px; border-radius: 25px; border: 0; background: var(--accent); color: #fff; font: 600 16px Inter, system-ui, sans-serif; }
+  h2 { align-self: flex-start; font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: var(--text2); margin: 30px 4px 10px; font-weight: 600; }
+  .grid { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .grid a { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 4px; border-radius: 16px; background: var(--card); color: var(--text); text-decoration: none; font-size: 12px; text-align: center; }
+  .grid a:active { background: var(--line); }
+  .grid b { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-size: 18px; color: #fff; }
+  .note { color: var(--text2); font-size: 13px; text-align: center; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="/icon.png" alt="">
+  <h1>Milo</h1>
+  <p class="tag">The Pets OS browser. Search the web or go straight to a site.</p>
+  <form action="https://search.brave.com/search" method="get" id="f">
+    <input name="q" id="q" type="search" placeholder="Search or type a web address" autocomplete="off" autocapitalize="off" enterkeyhint="go" aria-label="Search or type a web address">
+    <button type="submit">Go</button>
+  </form>
+  <h2>Shortcuts</h2>
+  <nav class="grid">
+    <a href="https://shouldbe.media/"><b style="background:#5b8cff">S</b>Should Be</a>
+    <a href="https://en.m.wikipedia.org/"><b style="background:#5d6680">W</b>Wikipedia</a>
+    <a href="https://www.bbc.co.uk/news"><b style="background:#c8102e">B</b>BBC News</a>
+    <a href="https://m.youtube.com/"><b style="background:#ff3b30">▶</b>YouTube</a>
+    <a href="https://www.google.com/maps"><b style="background:#34a853">M</b>Maps</a>
+    <a href="https://search.brave.com/"><b style="background:#fb542b">B</b>Brave Search</a>
+    <a href="https://www.metoffice.gov.uk/"><b style="background:#2fb8d8">☁</b>Weather</a>
+    <a href="https://shouldbe.media/pets-os"><b style="background:#8c7bff">P</b>Pets OS</a>
+  </nav>
+  <p class="note">Searches use Brave Search. Use × at the top to go back to Pets OS.</p>
+</main>
+<script>
+  // Addresses go straight to the site; anything else is searched.
+  document.getElementById('f').addEventListener('submit', function (e) {
+    var t = document.getElementById('q').value.trim();
+    if (!t) { e.preventDefault(); return; }
+    if (/^https?:\/\//i.test(t)) { e.preventDefault(); location.href = t; }
+    else if (t.indexOf(' ') < 0 && /\.[a-z]{2,}(\/|$)/i.test(t)) { e.preventDefault(); location.href = 'https://' + t; }
+  });
+</script>
+</body>
+</html>

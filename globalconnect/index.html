@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071a37">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GlobalConnect">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>GlobalConnect</title>
+<link rel="manifest" href="/globalconnect/manifest.webmanifest">
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#0b1628;background:#edf3f8}*{box-sizing:border-box}body{margin:0;background:linear-gradient(#f9fbfd,#e8eff7);min-height:100vh}.app{width:min(100%,480px);min-height:100vh;margin:auto;padding:calc(18px + env(safe-area-inset-top)) 18px calc(34px + env(safe-area-inset-bottom));background:#f7f9fc}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:26px;font-weight:800}.brand b{color:#0879ff}.tag{font-size:10px;letter-spacing:2px;color:#72839a}.hero{margin-top:20px;padding:22px;border-radius:28px;background:linear-gradient(145deg,#06162f,#0d3260);color:#fff;box-shadow:0 20px 45px #112d5522}.pill{display:inline-block;background:#14b77a;padding:7px 10px;border-radius:999px;font-size:12px}.country{margin-top:24px;display:flex;gap:12px;align-items:center}.flag{font-size:32px}.label{font-size:12px;color:#9fb1c8}.select{border:0;background:transparent;color:#fff;font-size:20px;font-weight:750;padding:0}.row{margin-top:20px;padding-top:18px;border-top:1px solid #ffffff22;display:flex;justify-content:space-between}.card{margin-top:14px;background:#fff;border:1px solid #dfe7f0;border-radius:20px;padding:16px}.card h3{margin:0 0 4px}.muted{color:#68788f;font-size:13px}.alias{font:700 18px ui-monospace,monospace;margin:12px 0;background:#eef5fc;padding:14px;border-radius:14px;word-break:break-all}.btn{width:100%;border:0;border-radius:16px;padding:14px;margin-top:10px;font-weight:750;background:#0879ff;color:#fff}.btn.secondary{background:#0d223f}.btn.light{background:#eaf1f8;color:#18314e}.install{margin-top:14px;padding:14px;border-radius:16px;background:#fff8df;border:1px solid #f2d788;font-size:13px;line-height:1.45}.note{font-size:12px;color:#718096;line-height:1.5;margin-top:14px}.hidden{display:none}select{font:inherit}dialog{width:min(92%,430px);border:0;border-radius:24px;padding:20px}dialog::backdrop{background:#07142788}textarea{width:100%;min-height:150px;border:1px solid #dfe7f0;border-radius:14px;padding:12px;margin-top:10px}.x{float:right;border:0;background:#edf2f7;border-radius:12px;width:38px;height:38px;font-size:20px}
+</style>
+</head>
+<body>
+<main class="app">
+<div class="top"><div><div class="brand">Global<b>Connect</b></div><div class="tag">INDEPENDENT MOBILE</div></div><span class="pill">Online</span></div>
+<section class="hero">
+<span class="pill">Private profile active</span>
+<div class="country"><div class="flag" id="flag">🇬🇧</div><div><div class="label">Country</div><select class="select" id="country"><option value="UK|🇬🇧|United Kingdom">United Kingdom</option><option value="ZM|🇿🇲|Zambia">Zambia</option><option value="US|🇺🇸|United States">United States</option><option value="CA|🇨🇦|Canada">Canada</option><option value="DE|🇩🇪|Germany">Germany</option><option value="FR|🇫🇷|France">France</option><option value="JP|🇯🇵|Japan">Japan</option><option value="AU|🇦🇺|Australia">Australia</option></select></div></div>
+<div class="row"><div><div class="label">Public phone number</div><strong>Not provisioned</strong></div><div><div class="label">Mode</div><strong>WebRTC</strong></div></div>
+</section>
+
+<div class="install" id="iphoneInstall"><strong>Download / install on iPhone:</strong> open this page in Safari, tap the Share button, then tap <strong>Add to Home Screen</strong>. GlobalConnect will be added to your iPhone Home Screen and open like an app.</div>
+
+<section class="card">
+<h3>Private call identity</h3><div class="muted">A fresh private alias is generated for every call.</div>
+<div class="alias" id="alias">GC-UK-READY</div>
+<button class="btn light" id="newAlias">Generate new alias</button>
+<button class="btn" id="startCall">Start app-to-app call</button>
+</section>
+
+<section class="card">
+<h3>International calling</h3>
+<div class="muted">GlobalConnect-to-GlobalConnect browser calls can use WebRTC. Calling ordinary mobile/landline numbers needs a legitimate public-network interconnect; this app does not fabricate caller IDs.</div>
+<a class="btn secondary" style="display:block;text-align:center;text-decoration:none" href="/downloads/GlobalConnect-Independent.zip" download>Download ZIP</a>
+</section>
+<p class="note">No third-party JavaScript SDK is required. For cross-network WebRTC, you can configure STUN/TURN infrastructure you operate yourself inside the downloadable package.</p>
+</main>
+
+<dialog id="call"><button class="x" onclick="call.close()">×</button><h2>Voice invite</h2><p class="muted">This creates a browser-to-browser WebRTC invite. Share the invite privately with the other GlobalConnect user.</p><textarea id="signal" placeholder="Invite data appears here"></textarea><button class="btn" id="create">Create invite</button><button class="btn light" id="copy">Copy invite</button><p class="note" id="state">Ready</p></dialog>
+
+<script>
+const c=document.getElementById('country'),f=document.getElementById('flag'),a=document.getElementById('alias'),call=document.getElementById('call'),signal=document.getElementById('signal'),state=document.getElementById('state');
+let pc,stream;
+function code(){return c.value.split('|')[0]}
+function mk(){const b=new Uint8Array(5);crypto.getRandomValues(b);return 'GC-'+code()+'-'+[...b].map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase()}
+function refresh(){f.textContent=c.value.split('|')[1];a.textContent=mk();localStorage.gcCountry=c.selectedIndex}
+c.onchange=refresh; if(localStorage.gcCountry)c.selectedIndex=+localStorage.gcCountry; refresh();
+document.getElementById('newAlias').onclick=()=>a.textContent=mk();
+document.getElementById('startCall').onclick=()=>{a.textContent=mk();call.showModal()};
+document.getElementById('create').onclick=async()=>{try{stream=await navigator.mediaDevices.getUserMedia({audio:true});pc=new RTCPeerConnection({iceServers:[]});stream.getTracks().forEach(t=>pc.addTrack(t,stream));const offer=await pc.createOffer();await pc.setLocalDescription(offer);await new Promise(r=>setTimeout(r,1800));signal.value=JSON.stringify(pc.localDescription);state.textContent='Invite created. Send it to the other GlobalConnect user.'}catch(e){state.textContent='Could not start call: '+e.message}};
+document.getElementById('copy').onclick=async()=>{await navigator.clipboard.writeText(signal.value);state.textContent='Copied'};
+if(new URLSearchParams(location.search).get('install')==='ios'){document.getElementById('iphoneInstall')?.scrollIntoView({behavior:'smooth',block:'center'})}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('/globalconnect/sw.js').catch(()=>{});
+</script>
+</body></html>

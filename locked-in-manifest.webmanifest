@@ -1,0 +1,19 @@
+{
+  "name": "Locked In",
+  "short_name": "Locked In",
+  "description": "Create, schedule, analyse and grow across your social channels.",
+  "start_url": "/locked-in",
+  "scope": "/locked-in",
+  "display": "standalone",
+  "background_color": "#02050a",
+  "theme_color": "#02050a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/locked-in-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

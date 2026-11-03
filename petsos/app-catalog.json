@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-26",
+  "apps": [
+    {
+      "id": "milo", "displayName": "Milo", "icon": "globe", "tint": "#22D3EE", "category": "Internet",
+      "launchType": "native", "launchTarget": "milo", "minimumRole": "teen", "isSystemApp": true, "featured": true,
+      "summary": "The ShouldBe web browser. Type a web address or anything to search.",
+      "keywords": ["browser", "web", "internet", "search", "safari"],
+      "sourceProject": "05 Development/Applications/Milo (desktop edition)"
+    },
+    {
+      "id": "viewverse", "displayName": "Viewverse", "icon": "play.rectangle.on.rectangle.fill", "tint": "#A78BFA", "category": "Entertainment",
+      "launchType": "web", "availability": "desktopOnly", "minimumRole": "teen", "featured": true, "version": "0.2",
+      "summary": "Verified creators share real-life stories through AI characters, with review before publication.",
+      "statusNote": "Viewverse v0.2 is a working web prototype that runs on your Mac (also as the installed Mac app). It hasn’t been published at a public HTTPS address yet, so it can’t open on iPhone. When it has one, add it as this app’s launchTarget in the online app catalogue and it will open here — no Pets OS rebuild needed.",
+      "keywords": ["video", "stories", "creators"],
+      "sourceProject": "05 Development/Applications/Viewverse/05 Development/Viewverse-Web"
+    },
+    {
+      "id": "syncro", "displayName": "Syncro", "icon": "calendar.badge.clock", "tint": "#34D399", "category": "Productivity",
+      "launchType": "web", "launchTarget": "https://syncro-rho-seven.vercel.app/", "minimumRole": "teen", "featured": true,
+      "summary": "Intelligent daily planner that builds a live 24-hour routine around work, study and creative projects.",
+      "keywords": ["synchro", "planner", "routine", "schedule", "calendar"],
+      "sourceProject": "05 Development/Applications/Syncro"
+    },
+    {
+      "id": "shouldbe", "displayName": "ShouldBe", "icon": "heart.fill", "tint": "#5EE7FF", "category": "ShouldBe",
+      "launchType": "web", "launchTarget": "https://shouldbe.media/", "minimumRole": "teen",
+      "summary": "The ShouldBe hub: everything Cactic Gee is building, in one place.",
+      "keywords": ["cactic gee", "hub", "website"],
+      "sourceProject": "05 Development/Applications/Cactic Naxion"
+    },
+    {
+      "id": "pets-by-step", "displayName": "Pets by Step", "icon": "pawprint.circle.fill", "tint": "#FB923C", "category": "Lifestyle",
+      "launchType": "web", "launchTarget": "https://pets-by-step.vercel.app/", "minimumRole": "teen",
+      "summary": "A little hello. A big connection.",
+      "keywords": ["petsbystep", "pets"],
+      "sourceProject": "05 Development/Applications/PetsByStep"
+    },
+    {
+      "id": "caxion-records", "displayName": "Caxion Records", "icon": "music.mic", "tint": "#F472B6", "category": "Music",
+      "launchType": "web", "launchTarget": "https://caxion-records.vercel.app/", "minimumRole": "teen",
+      "summary": "Registration and booking for Caxion Records’ free studio sessions.",
+      "keywords": ["studio", "booking", "label"],
+      "sourceProject": "05 Development/Applications/Caxion Records"
+    },
+
+    { "id": "files", "displayName": "Files", "icon": "folder.fill", "tint": "#F59E0B", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "files", "minimumRole": "child", "isSystemApp": true, "summary": "Browse PetsFS Mobile." },
+    { "id": "write", "displayName": "Write", "icon": "pencil.line", "tint": "#60A5FA", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "write", "minimumRole": "child", "isSystemApp": true, "summary": "Persistent text editor." },
+    { "id": "draw", "displayName": "Draw", "icon": "paintpalette.fill", "tint": "#F472B6", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "draw", "minimumRole": "child", "isSystemApp": true, "summary": "Finger canvas." },
+    { "id": "music", "displayName": "Music", "icon": "music.note", "tint": "#A855F7", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "music", "minimumRole": "child", "isSystemApp": true, "summary": "Touch synthesizer." },
+    { "id": "terminal", "displayName": "Terminal", "icon": "terminal.fill", "tint": "#0DD199", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "terminal", "minimumRole": "child", "isSystemApp": true, "summary": "Pets OS command console." },
+    { "id": "pet-care", "displayName": "Pet Care", "icon": "pawprint.fill", "tint": "#FF634D", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "petCare", "minimumRole": "child", "isSystemApp": true, "summary": "Companion studio.",
+      "keywords": ["pet", "companion"] },
+    { "id": "julia", "displayName": "Julia", "icon": "sparkles", "tint": "#67E8F9", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "julia", "minimumRole": "child", "isSystemApp": true,
+      "summary": "Offline help assistant for Pets OS. (Milo is the web browser.)", "keywords": ["help", "assistant"] },
+    { "id": "settings", "displayName": "Settings", "icon": "gearshape.fill", "tint": "#9CA3AF", "category": "Pets OS",
+      "launchType": "native", "launchTarget": "settings", "minimumRole": "child", "isSystemApp": true, "summary": "Themes, updates and system info." },
+
+    { "id": "system-update", "displayName": "System Update", "icon": "arrow.triangle.2.circlepath.circle.fill", "tint": "#0DD199", "category": "System",
+      "launchType": "system", "launchTarget": "systemUpdate", "minimumRole": "adult", "isSystemApp": true,
+      "summary": "Check for Pets OS updates and refresh the app catalogue.", "keywords": ["update", "version"] },
+    { "id": "laptop-link", "displayName": "Laptop Link", "icon": "laptopcomputer.and.iphone", "tint": "#22D3EE", "category": "System",
+      "launchType": "system", "launchTarget": "laptopLink", "minimumRole": "admin", "isSystemApp": true,
+      "summary": "Connect Pets OS to your laptop securely over the internet.", "keywords": ["mac", "pair", "relay"] },
+    { "id": "app-registry", "displayName": "App Registry", "icon": "square.grid.3x3.fill", "tint": "#8B5CF6", "category": "System",
+      "launchType": "system", "launchTarget": "appRegistry", "minimumRole": "admin", "isSystemApp": true,
+      "summary": "Every registered app, its launch type and status.", "keywords": ["catalogue", "catalog"] },
+
+    {
+      "id": "sonix", "displayName": "Sonix", "icon": "waveform", "tint": "#F97316", "category": "Music",
+      "launchType": "web", "availability": "desktopOnly", "minimumRole": "teen",
+      "summary": "Music streaming platform — installable PWA prototype.",
+      "statusNote": "Sonix runs from your Mac as a local prototype and isn’t published online yet.",
+      "sourceProject": "05 Development/Applications/Sonix"
+    },
+    {
+      "id": "space", "displayName": "Space", "icon": "moon.stars.fill", "tint": "#818CF8", "category": "Apps",
+      "launchType": "web", "availability": "inDevelopment", "minimumRole": "teen",
+      "summary": "Web app in development.",
+      "statusNote": "Space is a Next.js project that hasn’t been deployed yet.",
+      "sourceProject": "05 Development/Applications/Space"
+    },
+    {
+      "id": "genesis", "displayName": "Genesis", "icon": "gamecontroller.fill", "tint": "#EAB308", "category": "Games",
+      "launchType": "web", "availability": "inDevelopment", "minimumRole": "teen",
+      "summary": "Game in development.",
+      "statusNote": "Genesis is a web game project that hasn’t been deployed yet.",
+      "sourceProject": "05 Development/Games/Genesis"
+    },
+    {
+      "id": "cadence", "displayName": "Cadence", "icon": "metronome.fill", "tint": "#2DD4BF", "category": "Apps",
+      "launchType": "web", "availability": "inDevelopment", "minimumRole": "teen",
+      "summary": "Early-stage project.",
+      "statusNote": "Cadence is at the starter stage and hasn’t been deployed.",
+      "sourceProject": "05 Development/Applications/Cadence"
+    },
+    {
+      "id": "roatchez", "displayName": "Roatchez", "icon": "tshirt.fill", "tint": "#E5E7EB", "category": "Fashion",
+      "launchType": "web", "availability": "inDevelopment", "minimumRole": "teen",
+      "summary": "Luxury streetwear label built from the margins.",
+      "statusNote": "The Roatchez web and iPhone apps are in development and not published yet.",
+      "sourceProject": "05 Development/Applications/Roatchez"
+    },
+    {
+      "id": "stepmail", "displayName": "Stepmail", "icon": "envelope.fill", "tint": "#38BDF8", "category": "Productivity",
+      "launchType": "web", "availability": "desktopOnly", "minimumRole": "adult",
+      "summary": "Private, branded email app.",
+      "statusNote": "Stepmail runs on your computer and isn’t reachable from iPhone.",
+      "keywords": ["email", "mail", "step mail"],
+      "sourceProject": "05 Development/Applications/Step Mail"
+    },
+    {
+      "id": "shouldcloud", "displayName": "ShouldCloud", "icon": "cloud.fill", "tint": "#60A5FA", "category": "Developer",
+      "launchType": "web", "availability": "desktopOnly", "minimumRole": "admin",
+      "summary": "Local deployment engine for ShouldBe apps (bundles Viewverse).",
+      "statusNote": "ShouldCloud runs on your Mac at localhost and isn’t reachable from iPhone.",
+      "sourceProject": "~/Downloads/ShouldCloud-Public"
+    },
+    {
+      "id": "shouldauth", "displayName": "ShouldAuth", "icon": "key.fill", "tint": "#FBBF24", "category": "Security",
+      "launchType": "web", "availability": "desktopOnly", "minimumRole": "adult",
+      "summary": "Encrypted passwords, PINs, secure notes and 2FA codes — desktop app.",
+      "statusNote": "ShouldAuth is a desktop (Electron) app.",
+      "sourceProject": "~/Downloads/ShouldAuth"
+    },
+    {
+      "id": "shootauth-2i", "displayName": "ShootAuth 2i", "icon": "lock.shield.fill", "tint": "#34D399", "category": "Security",
+      "launchType": "external", "availability": "separateApp", "minimumRole": "adult",
+      "summary": "Native iPhone authenticator and vault.",
+      "statusNote": "ShootAuth 2i is its own iPhone app, installed separately from Xcode. It doesn’t define a link scheme yet, so Pets OS can’t open it directly — open it from the iPhone Home Screen.",
+      "keywords": ["2fa", "authenticator", "shoot auth"],
+      "sourceProject": "~/Downloads/ShootAuth-2i"
+    },
+    {
+      "id": "fionn-guardian", "displayName": "Fionn Guardian", "icon": "person.crop.square.fill", "tint": "#FDA4AF", "category": "Mac",
+      "launchType": "web", "availability": "desktopOnly", "minimumRole": "adult",
+      "summary": "macOS menu-bar companion.",
+      "statusNote": "Fionn Guardian is a native Mac app.",
+      "sourceProject": "05 Development/Applications/Fionn Guardian"
+    },
+    {
+      "id": "nhs-next", "displayName": "NHS Next", "icon": "cross.case.fill", "tint": "#60A5FA", "category": "Health",
+      "launchType": "web", "availability": "archived", "minimumRole": "adult",
+      "summary": "Independent prototype — not an official NHS service.",
+      "statusNote": "Archived on 25 September 2026 when it was removed from ShouldBe (“To Be Continued”). It runs locally from the saved source only.",
+      "keywords": ["nhs", "health"],
+      "sourceProject": "~/Desktop/To Be Continued"
+    }
+  ]
+}

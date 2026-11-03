@@ -1,0 +1,8 @@
+{
+  "name":"GlobalConnect Independent",
+  "short_name":"GlobalConnect",
+  "start_url":"/globalconnect/index.html",
+  "display":"standalone",
+  "background_color":"#071a37",
+  "theme_color":"#071a37"
+}

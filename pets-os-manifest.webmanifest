@@ -1,0 +1,24 @@
+{
+  "name": "Pets OS",
+  "short_name": "Pets OS",
+  "description": "Pets OS Mobile Edition — a touch-first web OS with persistent filesystem, drawing canvas, and audio synthesizer.",
+  "start_url": "/pets-os-mobile",
+  "scope": "/pets-os-mobile",
+  "display": "standalone",
+  "background_color": "#e8f0e3",
+  "theme_color": "#e8f0e3",
+  "icons": [
+    {
+      "src": "/pets-os-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pets-os-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

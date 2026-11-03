@@ -1,0 +1,11 @@
+{
+  "product": "Pets OS Mobile",
+  "version": "3.0",
+  "build": 3,
+  "minimumIOS": "17.0",
+  "publishedAt": "2026-09-26T00:00:00Z",
+  "releaseNotes": "Build 3 Connected Edition: owner sign-in and age gate, app registry with ALL APPS, Milo web browser, Pets OS Update and Laptop Link.",
+  "installURL": null,
+  "appCatalogURL": "https://shouldbe.media/petsos/app-catalog.json",
+  "channel": "Development"
+}
