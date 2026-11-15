@@ -1,18 +1,19 @@
 {
  "app": "milo",
- "version": "0.2.1",
- "published": "2026-11-02",
- "expires": "2027-05-02",
+ "version": "0.3.0",
+ "published": "2026-11-15",
+ "expires": "2027-05-15",
  "url": "https://shouldbe.media/apps/milo/",
  "notes": [
-  "Sign in to Milo with Google, an email code, or StepMail (StepMail sign-in turns on when StepMail's server is online).",
-  "Accounts are optional: your bookmarks, history and settings stay on your Mac."
+  "Reader (⇧⌘R): read articles without clutter, with text size, an Easy Read font and Sepia or Night backgrounds.",
+  "Listen to Page (⇧⌘S), Reading List (⇧⌘D) and Tab Overview (⇧⌘\\).",
+  "If Clarice is set up on your Mac, she can summarise pages (⌥⌘S) and answer questions about them (⌥⌘C). Nothing is sent online."
  ],
  "platforms": {
   "darwin-arm64": {
-   "url": "https://github.com/Mwabampho/shouldbe-apps/releases/download/milo-v0.2.1/Milo-0.2.1-macOS.zip",
-   "sha256": "b307a58ebeadc75d409a5f51eb2a7e0e2bbe3e22bb5327fc500052de90be2968",
-   "size": 127300322
+   "url": "https://github.com/Mwabampho/shouldbe-apps/releases/download/milo-v0.3.0/Milo-0.3.0-macOS.zip",
+   "sha256": "0818eb308e54ddf398d22ffaf19c655bd9cc013e6ba72b70c90cfddf1066eb1f",
+   "size": 127436811
   }
  }
 }
